@@ -4,7 +4,7 @@
 // It should contain your first name, last name, age and hometown.
 
 // It should look something like this
-// var myObject = {
+// let myObject = {
 //     name: {
 //         first: 'Scott',
 //         last: 'Morin',
@@ -21,7 +21,7 @@
 
 //-------------------------------------------------
 
-// Exercise 1.1
+// Exercise A
 // ------------
 // Add three more key/value pairs to your object that represent other attributes
 // of yourself. Ideas include (but are not limited to):
@@ -34,7 +34,7 @@
 
 //-------------------------------------------------
 
-// Exercise 1.2
+// Exercise B
 // ------------
 // Look up your favorite movie on IMDB, and make an object that represents some
 // aspects of that movie, *e.g.*:
@@ -47,31 +47,27 @@
 // HINT: Most movies have multiple actors. What data-structure do we use to
 // represent a collection of similar things?
 
-var favoriteMovie = {
-
-}
-
+let favoriteMovie = {};
 
 //-------------------------------------------------
 
-// Exercise 1.3
+// Exercise C
 // ------------
 // Fix the attempts to access values in the `person` object:
 
-const key = "name";
+const key = 'name';
 const person = {
-    name: "Alyssa P. Hacker",
-    age: 26,
-    hometown: "somewhere"
+  name: 'Alyssa P. Hacker',
+  age: 26,
+  hometown: 'somewhere',
 };
 
-person[age];    // => 26
-person.key;     // => "Alyssa P. Hacker"
-
+person[age]; // => 26
+person.key; // => "Alyssa P. Hacker"
 
 //-------------------------------------------------
 
-// Exercise 1.4
+// Exercise D
 // ------------
 // Write a function `fullName` that takes a person object as an argument, and
 // returns that person's full name as a string. By *person object*, we mean an
@@ -80,25 +76,24 @@ person.key;     // => "Alyssa P. Hacker"
 
 // Example
 const alyssa = {
-    name: {
-        first: "Alyssa",
-        middle: "P.",
-        last: "Hacker"
-    },
-    age: 26,
+  name: {
+    first: 'Alyssa',
+    middle: 'P.',
+    last: 'Hacker',
+  },
+  age: 26,
 };
 
 function fullName(person) {
-    // Your code here
-
+  // Your code here
 }
 
 console.log(fullName(alyssa)); // => "Alyssa P. Hacker"
 
-// Exercise 1.5
+// Exercise E
 // ------------
 // What happens if you pass a person object to `fullName` that doesn't have a
-// middle name?
+// middle name? It's likely that you'd get a double space: "Alyssa  Hacker"
 
 // Your `fullName` function should work correctly regardless of whether or not
 // the person has a middle name -- if it doesn't produce the output shown above
@@ -106,16 +101,15 @@ console.log(fullName(alyssa)); // => "Alyssa P. Hacker"
 // it does.
 
 const rick = {
-    name: {
-        first: "Rick",
-        last: "Sanchez"
-    },
-    age: 66,
+  name: {
+    first: 'Rick',
+    last: 'Sanchez',
+  },
+  age: 66,
 };
 
 function betterFullName(person) {
-    // Your code here
-
+  // Your code here
 }
 
 console.log(betterFullName(rick)); // => "Rick Sanchez"

@@ -1,7 +1,7 @@
 // Exercise 2
 // -------------------
-const lateComers = ["Felicia", "Charles", "Terry"];
-const earlyBirds = ["Ellen", "Jerry", "Jasmine"];
+const lateComers = ['Felicia', 'Charles', 'Terry'];
+const earlyBirds = ['Ellen', 'Jerry', 'Jasmine'];
 
 // You have two arrays above of people who arrived late to your party and
 // people who arrived early.
@@ -17,5 +17,5 @@ const listOfGuests = earlyBirds.concat(lateComers);
 
 // output list
 listOfGuests.forEach((item, id) => {
-    console.log(`${id + 1}: ${item}`);
+  console.log(`${id + 1}: ${item}`);
 });

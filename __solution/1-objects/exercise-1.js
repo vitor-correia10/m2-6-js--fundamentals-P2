@@ -4,7 +4,7 @@
 // It should contain your first name, last name, age and hometown.
 
 // It should look something like this
-// var myObject = {
+// let myObject = {
 //     name: {
 //         first: 'Scott',
 //         last: 'Morin',
@@ -47,13 +47,13 @@
 // HINT: Most movies have multiple actors. What data-structure do we use to
 // represent a collection of similar things?
 
-var favoriteMovie = {
-    title: "Forrest Gump",
-    director: "Robert Zemeckis",
-    yearReleased: 1994,
-    ratings: "8.8/10",
-    actors: ["Tom Hanks", "Robin Wright", "Gary Sinise"],
-}
+let favoriteMovie = {
+  title: 'Forrest Gump',
+  director: 'Robert Zemeckis',
+  yearReleased: 1994,
+  ratings: '8.8/10',
+  actors: ['Tom Hanks', 'Robin Wright', 'Gary Sinise'],
+};
 
 //-------------------------------------------------
 
@@ -61,15 +61,12 @@ var favoriteMovie = {
 // ------------
 // Fix the attempts to access values in the `person` object:
 
-const key = "name";
+const key = 'name';
 const person = {
-    name: "Alyssa P. Hacker",
-    age: 26,
-    hometown: "somewhere"
+  name: 'Alyssa P. Hacker',
+  age: 26,
+  hometown: 'somewhere',
 };
-
-person[age];    // => 26
-person.key;     // => "Alyssa P. Hacker"
 
 console.log(person.age); // => 26
 console.log(person['name']); // => "Alyssa P. Hacker"
@@ -85,17 +82,17 @@ console.log(person['name']); // => "Alyssa P. Hacker"
 
 // Example
 const alyssa = {
-    name: {
-        first: "Alyssa",
-        middle: "P.",
-        last: "Hacker"
-    },
-    age: 26,
+  name: {
+    first: 'Alyssa',
+    middle: 'P.',
+    last: 'Hacker',
+  },
+  age: 26,
 };
 
 function fullName(person) {
-    // Your code here
-    return `${person.first} ${person.middle} ${person.last}`;
+  // Your code here
+  return `${person.name.first} ${person.name.middle} ${person.name.last}`;
 }
 
 console.log(fullName(alyssa)); // => "Alyssa P. Hacker"
@@ -111,16 +108,20 @@ console.log(fullName(alyssa)); // => "Alyssa P. Hacker"
 // it does.
 
 const rick = {
-    name: {
-        first: "Rick",
-        last: "Sanchez"
-    },
-    age: 66,
+  name: {
+    first: 'Rick',
+    last: 'Sanchez',
+  },
+  age: 66,
 };
 
 function betterFullName(person) {
-    // Your code here
-    return `${person.first} ${person.middle || ''} ${person.last}`;
+  // Your code here
+  let nameArray = [person.name.first, person.name.middle, person.name.last];
+
+  nameArray = nameArray.filter((name) => typeof name === 'string');
+
+  return nameArray.join(' ');
 }
 
 console.log(betterFullName(rick)); // => "Rick Sanchez"

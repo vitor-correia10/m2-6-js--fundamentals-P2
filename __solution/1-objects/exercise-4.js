@@ -1,11 +1,11 @@
 // Exercise 4
 // -------------------
 
-var foodPairings = {
-    burgers: 'beer',
-    fish: 'white wine',
-    beef: 'red wine',
-    strawberries: 'cream'
+let foodPairings = {
+  burgers: 'beer',
+  fish: 'white wine',
+  beef: 'red wine',
+  strawberries: 'cream',
 };
 
 // We have an Object that contains food pairings so that our sommelier can make
@@ -18,5 +18,5 @@ console.log(Object.keys(foodPairings));
 // "With <FOOD_ITEM>, it is best to have <BEVERAGE>."
 
 Object.keys(foodPairings).forEach((item, id) => {
-    console.log(`With ${item}, it is best to have ${foodPairings[item]}.`)
-}) 
+  console.log(`With ${item}, it is best to have ${foodPairings[item]}.`);
+});

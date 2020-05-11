@@ -3,16 +3,16 @@
 // Grubhub's "year in food" for 2018
 // source: https://www.insider.com/most-popular-foods-grubhub-2018-12
 
-var mostPopularFood = [
-    'poke bowl',
-    'chicken sliders',
-    'pork baby back ribs',
-    'chicken burritos',
-    'chicken sandwich',
-    'cauliflower rice bowl',
-    'chicken and waffle sliders',
-    'parmesan chicken',
-    undefined,
+let mostPopularFood = [
+  'poke bowl',
+  'chicken sliders',
+  'pork baby back ribs',
+  'chicken burritos',
+  'chicken sandwich',
+  'cauliflower rice bowl',
+  'chicken and waffle sliders',
+  'parmesan chicken',
+  undefined,
 ];
 
 // The array holds a top-ten list of foods as ranked by Grubhub.
@@ -24,4 +24,4 @@ var mostPopularFood = [
 // Add them to the array in the right position
 // Output them in a tidy top-ten fashion in the console.
 
-// NO for loops!
+// NO for loops (use `forEach` instead)
