@@ -19,8 +19,8 @@ let inputData = {
   motherName: 'Joyce Byers',
   motherAge: 35,
   motherStatus: 'worried',
-  motherSuperpower1: null,
-  motherSuperpower1: null,
+  motherSuperpower2: null,
+  motherSuperpower2: null,
   bestFriendName: 'Mike Wheeler',
   bestFriendAge: 9,
   bestFriendStatus: 'frenetic',
@@ -29,8 +29,8 @@ let inputData = {
   girlfriendName: 'Eleven',
   girlfriendAge: 9,
   girlfriendStatus: 'angry',
-  girlfriendSuperpower1: 'telepathy',
-  girlfriendSuperpower1: 'multiverse portal sealing',
+  girlfriendSuperpower2: 'telepathy',
+  girlfriendSuperpower2: 'multiverse portal sealing',
 };
 
 /*
@@ -87,8 +87,54 @@ For example, the main superpowers array should be:
 ⛔️ ['can-blink-lights', null]
 */
 
+function peoplePowers(...powers){
+  let power = [];
+  powers.forEach(function(item) {
+    if (item) {
+      power.push(item)
+    }
+  });
+  return power;
+}
+
 function transformData(data) {
   // Your code here
+  let transform = {};
+    transform.name = data.name;
+    transform.age = data.age;
+    transform.status = data.status;
+    transform.address = {
+      streetAddress: data.address1,
+      city: data.addressCity,
+      state: data.addressState,
+      country: data.addressCountry,
+    };
+    transform.superpowers = peoplePowers(data.superpower1, data.superpower2);
+
+    transform.relationship = [];
+    transform.relationship.push({
+      type: 'mother',
+      name: data.motherName,
+      age: data.motherAge,
+      status: data.motherStatus,
+      supperpowers: peoplePowers(
+        data.motherSuperpower1,
+        data.motherSuperpower2
+      ),
+    },
+    {
+      type: 'girlfriend',
+      name: data.girlfriendName,
+      age: data.girlfriendAge,
+      status: data.girlfriendStatus,
+      supperpowers: peoplePowers(
+        data.girlfriendSuperpower1,
+        data.girlfriendSuperpower2
+      ),
+    }
+    );
+
+  return transform
 }
 
 /*

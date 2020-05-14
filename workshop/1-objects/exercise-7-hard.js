@@ -31,7 +31,7 @@ const favouriteDessertsGroupB = {
   colin: 'gummy bears',
   damien: 'child tears',
   ellicia: 'panda express',
-  fertrude: 'gummy bears'.
+  fertrude: 'gummy bears',
   glinda: 'pie',
   hethel: 'not applicable',
   irsula: 'rum cake',
@@ -55,6 +55,26 @@ const favouriteDessertsGroupB = {
 
 function sortDessertsByPopularity(dessertObject) {
   // Write code
+
+  let countDessert = {};
+  let arrDessert = Object.values(dessertObject);
+
+  arrDessert.forEach(num => {
+  countDessert[num] = 0;
+  })
+
+  arrDessert.forEach(num => {
+  countDessert[num] += 1;
+  })
+
+  let desserts = [];
+  Object.keys(countDessert).forEach(function(dessert){
+    desserts.push([dessert, countDessert[dessert]])
+  });
+
+  desserts.sort((a, b) => b[1] - a[1])
+
+  return desserts
 }
 
 console.log(
@@ -96,7 +116,19 @@ order, and that's 100% OK).
 */
 
 function groupPeopleByDessert(dessertObject) {
+  let people = Object.keys(dessertObject);
+  let groupDessert = {};
 
+  people.forEach((dessert) => {
+    let desserts = dessertObject[person];
+
+    if (groupDessert[desserts]) {
+      groupDessert[desserts].push(person);
+    } else {
+      groupDessert[desserts] = [person];
+    }
+  });
+  return groupDessert;
 }
 
 console.log(

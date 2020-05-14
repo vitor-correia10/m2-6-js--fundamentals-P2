@@ -19,6 +19,19 @@
 // A) console.log() your object.
 // B) console.log() a few of the values in the object.
 
+let myObject = {
+  name: {
+    first: 'Vitor',
+    last: 'Correia',
+  },
+  age: '30',
+  city: 'Rio de Janeiro',
+  siblings: 1,
+  monthOfBirth: 'April'
+}
+
+console.log(myObject);
+console.log(myObject.name.first);
 //-------------------------------------------------
 
 // Exercise A
@@ -31,7 +44,9 @@
 //     - Pets (number of pets, names of pets, etc.)
 
 // HINT: You can just modify the object that you created before.
-
+  myObject.numberOfPet = 0;
+  myObject.dayOfBirth = 26;
+  myObject.favoriteColor = 'red';
 //-------------------------------------------------
 
 // Exercise B
@@ -47,7 +62,13 @@
 // HINT: Most movies have multiple actors. What data-structure do we use to
 // represent a collection of similar things?
 
-let favoriteMovie = {};
+let favoriteMovie = {
+  title: 'The Pursuit of Happyness',
+  director: 'Gabriele Muccino',
+  yearReleased: 2006,
+  rating: '8.0/10',
+  actors: ['Will Smith', 'Jaden Smith', 'Rosario Dawson'],
+};
 
 //-------------------------------------------------
 
@@ -62,8 +83,8 @@ const person = {
   hometown: 'somewhere',
 };
 
-person[age]; // => 26
-person.key; // => "Alyssa P. Hacker"
+console.log(person['age']); // => 26
+console.log(person.name); // => "Alyssa P. Hacker"
 
 //-------------------------------------------------
 
@@ -86,9 +107,11 @@ const alyssa = {
 
 function fullName(person) {
   // Your code here
+  let {first, last} = person.name;
+  return `${first} ${last}`;
 }
 
-console.log(fullName(alyssa)); // => "Alyssa P. Hacker"
+console.log(fullName(myObject)); // => "Vitor Correia"
 
 // Exercise E
 // ------------
@@ -110,6 +133,12 @@ const rick = {
 
 function betterFullName(person) {
   // Your code here
+  let personName = person.name;
+  let fullName = [personName.first, personName.middle, personName.last]
+
+  fullName = fullName.filter((name) => typeof name === 'string');
+
+  return fullName.join(' ');  
 }
 
 console.log(betterFullName(rick)); // => "Rick Sanchez"
